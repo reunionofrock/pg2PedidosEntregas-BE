@@ -234,7 +234,9 @@ public class Products {
     public int delProductcQuery(String id) {
         int response = 0;
         try {
-            String query = "DELETE FROM productos WHERE id_producto = ?";
+            String query = "UPDATE productos\r\n" + //
+                    "SET disponible = false\r\n" + //
+                    "WHERE id_producto = ?";
             this.conn.Conectar();
             PreparedStatement ps = this.conn.prepareStatement(query);
             ps.setInt(1, Integer.parseInt(id));

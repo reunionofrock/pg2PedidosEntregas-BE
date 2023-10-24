@@ -99,7 +99,7 @@ public class retrieveProducts {
   public HttpResponseMessage run5(
     @HttpTrigger(
       name = "req",
-      methods = { HttpMethod.DELETE },
+      methods = { HttpMethod.GET },
       authLevel = AuthorizationLevel.ANONYMOUS,
       route = "products/delProduct"
     ) HttpRequestMessage<Optional<String>> request,
